@@ -1,5 +1,6 @@
 package com.edu.tecsup.libro.microserviciolibros.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,5 +14,6 @@ public @Data class Categoria {
     private Long id;
     private String nombre;
     @OneToMany(mappedBy = "categoria")
+    @JsonIgnore
     private Set<Libro> libros;
 }
